@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Suite">
+    <listeners>
+        <listener class-name="com.qalegend.reports.TestListener"/>
+    </listeners>
+    <test name="Chrome test">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="com.qalegend.testscripts.LoginPageTest"/>
+        </classes>
+    </test>
+    <test name="Edge test">
+        <parameter name="browser" value="Edge"/>
+        <parameter name="baseurl" value="https://demowebshop.tricentis.com/"/>
+        <classes>
+            <class name="com.qalegend.testscripts.LoginPageTest"/>
+        </classes>
+    </test>
+</suite>

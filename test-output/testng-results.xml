@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-22T11:44:39 IST" name="Login Suite" finished-at="2023-09-22T11:44:50 IST" duration-ms="11068">
+    <groups>
+      <group name="Smoke">
+        <method signature="LoginPageTest.verifyLoginPageTitle()[pri:0, instance:com.qalegend.testscripts.LoginPageTest@6933b6c6]" name="verifyLoginPageTitle" class="com.qalegend.testscripts.LoginPageTest"/>
+      </group> <!-- Smoke -->
+    </groups>
+    <test started-at="2023-09-22T11:44:39 IST" name="functional test" finished-at="2023-09-22T11:44:50 IST" duration-ms="11068">
+      <class name="com.qalegend.testscripts.LoginPageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.qalegend.testscripts.LoginPageTest@6933b6c6]" started-at="2023-09-22T11:44:39 IST" name="setUp" finished-at="2023-09-22T11:44:48 IST" duration-ms="8860" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyLoginPageTitle()[pri:0, instance:com.qalegend.testscripts.LoginPageTest@6933b6c6]" started-at="2023-09-22T11:44:48 IST" name="verifyLoginPageTitle" finished-at="2023-09-22T11:44:50 IST" duration-ms="1998" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginPageTitle -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.qalegend.testscripts.LoginPageTest@6933b6c6]" started-at="2023-09-22T11:44:50 IST" name="tearDown" finished-at="2023-09-22T11:44:50 IST" duration-ms="127" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginPageTitle status=SUCCESS method=LoginPageTest.verifyLoginPageTitle()[pri:0, instance:com.qalegend.testscripts.LoginPageTest@6933b6c6] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qalegend.testscripts.LoginPageTest -->
+    </test> <!-- functional test -->
+  </suite> <!-- Login Suite -->
+</testng-results>
