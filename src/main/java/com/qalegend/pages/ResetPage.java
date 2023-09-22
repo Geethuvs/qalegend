@@ -1,10 +1,8 @@
 package com.qalegend.pages;
 
+import com.fasterxml.jackson.databind.JsonSerializable;
+import com.qalegend.utilities.TestHelperUtility;
 import org.openqa.selenium.WebDriver;
 
-public class ResetPage {
-    WebDriver driver;
-    public ResetPage(WebDriver driver){
-        this.driver=driver;
-    }
+public class ResetPage extends TestHelperUtility {
 }
