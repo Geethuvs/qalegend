@@ -8,5 +8,7 @@ public class LoginPage extends TestHelperUtility {
     public LoginPage(WebDriver driver){
         this.driver=driver;
     }
-
+    public String getLoginPageTitle(){
+        return webDriver.getTitleOfWebPage(driver);
+    }
 }
