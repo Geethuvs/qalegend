@@ -9,14 +9,14 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class CommandUtility {
-    public void switchToAlert(WebDriver driver,Alert alert){
-    driver.switchTo().alert();
+    public Alert switchToAlert(WebDriver driver){
+    return driver.switchTo().alert();
     }
-    public void acceptAlert(Alert alert){
-        alert.accept();
+    public void acceptAlert(WebDriver driver){
+        switchToAlert(driver).accept();
     }
-    public void dismissAlert(Alert alert){
-        alert.dismiss();
+    public void dismissAlert(WebDriver driver){
+        switchToAlert(driver).dismiss();
     }
     public String getTextAlert(Alert alert){
     return alert.getText();

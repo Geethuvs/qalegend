@@ -17,6 +17,7 @@ public class SignOutPage extends TestHelperUtility {
     WebElement signOut;
     public LoginPage clickOnSignOutButton() {
        // wait.waitForVisibilityOfElementLocatedByXpath(driver,"//a[text()='Sign Out']");
+        wait.hardWait();
         webElement.clickOnElement(signOut);
         return new LoginPage(driver);
     }

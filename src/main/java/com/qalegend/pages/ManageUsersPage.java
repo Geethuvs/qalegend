@@ -26,11 +26,13 @@ public class ManageUsersPage extends TestHelperUtility {
     @FindBy(xpath = "//tbody//tr[@role='row']//td")
     List<WebElement> columnElements;
     @FindBy(xpath = "//a[@class='dropdown-toggle']")
-    WebElement signOut;
+    WebElement signOutPage;
     @FindBy(xpath = "//td[@class='dataTables_empty']")
     WebElement invalidEmailErrorMessage;
     @FindBy(xpath = "//button[@class='btn btn-xs btn-danger delete_user_button']")
     WebElement deleteButton;
+    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm swal-button--danger']")
+    WebElement deletePopupOkButton;
 
     public AddUsersPage clickOnAddButton() {
         webElement.clickOnElement(addButton);
@@ -39,11 +41,7 @@ public class ManageUsersPage extends TestHelperUtility {
 
     public void enterValueInSearchField(String value) {
         webElement.enterText(searchField, value);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        wait.hardWait();
     }
 
     public List<List<String>> getUserDetails(String emailId) {
@@ -55,8 +53,8 @@ public class ManageUsersPage extends TestHelperUtility {
         return page.getUserDataIntoList(prefix,firstName,lastName,userName,email,role);
     }
     public SignOutPage clickOnUserAccountId(){
-        //wait.waitForVisibilityOfElementLocatedByXpath(driver,"//a[@class='dropdown-toggle']");
-        webElement.clickOnElement(signOut);
+        wait.hardWait();
+        webElement.clickOnElement(signOutPage);
         return new SignOutPage(driver);
     }
     public String getErrorMessage(){
@@ -64,6 +62,9 @@ public class ManageUsersPage extends TestHelperUtility {
     }
     public void clickOnDeleteButton(){
         webElement.clickOnElement(deleteButton);
+    }
+    public void acceptUserDeletionPopup(){
+        webElement.clickOnElement(deletePopupOkButton);
     }
 }
 

@@ -18,7 +18,6 @@ import static org.bouncycastle.crypto.tls.ContentType.alert;
 
 public class ManageUsersTest extends Base {
     ThreadLocal<ExtentTest> extentTest = TestListener.getTestInstance();
-    Alert alert;
     LoginPage login;
     HomePage home;
     UserManagementPage userManagement;
@@ -64,11 +63,9 @@ public class ManageUsersTest extends Base {
         manageUser=addUsers.addUserDetails(prefix,firstName,lastName,email,uName,passWord,passWord,salesCommissionPercentage);
         manageUser.enterValueInSearchField(email);
         manageUser.clickOnDeleteButton();
-        CommandUtility command=new CommandUtility();
-        command.switchToAlert(driver,alert);
-        command.acceptAlert(alert);
+        manageUser.acceptUserDeletionPopup();
         manageUser.enterValueInSearchField(email);
         String actualErrorMessage=manageUser.getErrorMessage();
-        Assert.assertEquals(actualErrorMessage,errorMessage,"User not exist");
+        Assert.assertEquals(actualErrorMessage,errorMessage,"Unable to delete the user");
     }
 }

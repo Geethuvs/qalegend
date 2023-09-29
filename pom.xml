@@ -69,7 +69,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
-                        <suiteXmlFile>parameterisationtestng.xml</suiteXmlFile>
+                        <suiteXmlFile>jenkinstestng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

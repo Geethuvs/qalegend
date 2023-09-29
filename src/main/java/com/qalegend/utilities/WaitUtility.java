@@ -1,10 +1,7 @@
 package com.qalegend.utilities;
 
 import com.qalegend.constants.Constants;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -69,5 +66,15 @@ public class WaitUtility {
         wait.pollingEvery(Duration.ofSeconds(FLUENT_POLLING_TIME));
         wait.ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.alertIsPresent());
+    }
+    public void waitForPageLoad(WebDriver driver){
+        ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+    }
+    public void hardWait(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

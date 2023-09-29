@@ -4,8 +4,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 public class WebElementUtility {
+    WaitUtility wait=new WaitUtility();
     public void clickOnElement(WebElement element) {
         element.click();
+
     }
 
     public void enterText(WebElement element, String valueToEnter) {
