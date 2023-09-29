@@ -52,7 +52,7 @@ public class Base {
 
     }
     @Parameters({"browser"})
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp(String browser){
         String baseUrl=prop.getProperty("url");
         initialiseTest(browser);

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Suite">
+    <listeners>
+        <listener class-name="com.qalegend.reports.TestListener"/>
+    </listeners>
+    <test name="functional test">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="com.qalegend.testscripts.LoginPageTest">
+                <methods>
+                    <include name="verifyLoginPageTitle"/>
+                    <include name="verifyUserLogin"/>
+                    <include name="verifyInvalidUserCredentials"/>
+                </methods>
+            </class>
+            <class name="com.qalegend.testscripts.HomePageTest">
+                <methods>
+                    <include name="verifyHomePageTitle"/>
+                </methods>
+            </class>
+            <class name="com.qalegend.testscripts.ResetPageTest">
+                <methods>
+                    <include name="verifyForgetPassword"/>
+                </methods>
+            </class>
+            <class name="com.qalegend.testscripts.UserManagementTest">
+                <methods>
+                    <include name="verifyUserManagementPanelData"/>
+                </methods>
+            </class>
+            <class name="com.qalegend.testscripts.ManageUsersTest">
+                <methods>
+                    <include name="verifyInvalidUserSearch"/>
+                    <include name="verifyUserDelete"/>
+                </methods>
+            </class>
+            <class name="com.qalegend.testscripts.AddUsersTest">
+                <methods>
+                    <include name="verifyUserCreation"/>
+                    <include name="verifyUserLoginForNewlyCreatedUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
